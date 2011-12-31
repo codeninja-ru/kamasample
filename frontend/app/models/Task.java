@@ -13,18 +13,18 @@ public class Task {
     /**
      * первое число
      */
-    protected Integer val1;
+    protected int val1;
     /**
      * второе число
      */
-    protected Integer val2;
+    protected int val2;
     
     /**
      * рузультат вычисления
      */
     protected TaskResult result;
 
-    public Task(Integer val1, Integer val2) {
+    public Task(int val1, int val2) {
         this.val1 = val1;
         this.val2 = val2;
     }
@@ -37,19 +37,19 @@ public class Task {
         this.result = result;
     }
 
-    public Integer getVal1() {
+    public int getVal1() {
         return val1;
     }
 
-    public void setVal1(Integer val1) {
+    public void setVal1(int val1) {
         this.val1 = val1;
     }
 
-    public Integer getVal2() {
+    public int getVal2() {
         return val2;
     }
 
-    public void setVal2(Integer val2) {
+    public void setVal2(int val2) {
         this.val2 = val2;
     }
     

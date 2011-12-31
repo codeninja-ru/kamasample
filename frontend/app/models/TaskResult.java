@@ -9,17 +9,17 @@ public class TaskResult {
     /**
      * собственно результат
      */
-    protected Integer value;
+    protected int value;
 
-    public TaskResult(Integer value) {
+    public TaskResult(int value) {
         this.value = value;
     }
 
-    public Integer getValue() {
+    public int getValue() {
         return value;
     }
 
-    public void setValue(Integer value) {
+    public void setValue(int value) {
         this.value = value;
     }
     

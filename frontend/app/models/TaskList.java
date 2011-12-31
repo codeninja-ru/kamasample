@@ -9,6 +9,8 @@ import java.util.List;
  * в реальной жижни тут должна быть база данных,
  * но мне было влом заморачиваться
  * 
+ * Singletone
+ * 
  * @author vital
  */
 public class TaskList {
@@ -17,8 +19,18 @@ public class TaskList {
      * список наших задач
      */
     protected List<Task> taskList;
+    
+    private static TaskList instance;
+    
+    public static TaskList getInstance() {
+        if (instance == null) {
+            instance = new TaskList();
+        }
+        
+        return instance;
+    }
 
-    private TaskList() {
+    public TaskList() {
         this.taskList = new ArrayList<Task>();
     }
     
