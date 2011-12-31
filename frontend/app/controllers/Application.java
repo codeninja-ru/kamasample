@@ -9,8 +9,15 @@ import models.*;
 
 public class Application extends Controller {
 
+    /**
+     * show task list
+     */
     public static void index() {
         render();
+    }
+    
+    public static void addTask(Integer val1, Integer val2) {
+        
     }
 
 }
