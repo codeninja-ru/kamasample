@@ -46,7 +46,8 @@ public class TaskList {
      * @return идентификатор задачи
      */
     public int addTask(Task task) {
-        throw new UnsupportedOperationException();
+        this.taskList.add(task);
+        return this.taskList.size() - 1;
     }
     
     /**
@@ -55,16 +56,17 @@ public class TaskList {
      * @param result результат
      */
     public void setResult(int taskId, TaskResult result) {
-        throw new UnsupportedOperationException();
+        Task task = this.taskList.get(taskId);
+        task.setResult(result);
     }
     
     /**
      * 
-     * @param TaskId
+     * @param taskId
      * @return 
      */
-    public Task getTask(int TaskId) {
-        throw new UnsupportedOperationException();
+    public Task getTask(int taskId) {
+        return this.taskList.get(taskId);
     }
     
     /**
@@ -72,7 +74,7 @@ public class TaskList {
      * @return 
      */
     public int getCount() {
-        throw new UnsupportedOperationException();
+        return this.taskList.size();
     }
     
     /**
@@ -80,7 +82,14 @@ public class TaskList {
      * @return 
      */
     public int getCountUncalculatedTasks() {
-        throw new UnsupportedOperationException();
+        
+        int count = 0;
+        
+        for (Task task : this.getTaskList()) {
+            if (task.getResult() == null) count++;
+        }
+        
+        return count;
     }
     
     /**
@@ -88,7 +97,13 @@ public class TaskList {
      * @return 
      */
     public int getCountCalculatedTasks() {
-        throw new UnsupportedOperationException();
+        int count = 0;
+        
+        for (Task task : this.getTaskList()) {
+            if (task.getResult() instanceof TaskResult) count++;
+        }
+        
+        return count;
     }
     
     

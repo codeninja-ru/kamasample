@@ -29,18 +29,18 @@ public class TaskListTest extends UnitTest {
 
         
         int result = taskList.addTask(task1);
-        assertEquals(result, 1);
+        assertEquals(result, 0);
         result = taskList.addTask(task2);
-        assertEquals(result, 2);
+        assertEquals(result, 1);
         result = taskList.addTask(task3);
-        assertEquals(result, 3);
+        assertEquals(result, 2);
         result = taskList.addTask(task4);
-        assertEquals(result, 4);
+        assertEquals(result, 3);
         
-        assertEquals(taskList.getTask(1), task1);
-        assertEquals(taskList.getTask(2), task2);
-        assertEquals(taskList.getTask(3), task3);
-        assertEquals(taskList.getTask(4), task4);
+        assertEquals(taskList.getTask(0), task1);
+        assertEquals(taskList.getTask(1), task2);
+        assertEquals(taskList.getTask(2), task3);
+        assertEquals(taskList.getTask(3), task4);
         
     }
     
@@ -54,8 +54,8 @@ public class TaskListTest extends UnitTest {
         taskList.addTask(new Task(1, 2));
         taskList.addTask(new Task(1, 2));
         
-        taskList.setResult(2, taskResult);
-        TaskResult r = taskList.getTask(2).getResult();
+        taskList.setResult(1, taskResult);
+        TaskResult r = taskList.getTask(1).getResult();
         assertEquals(r, taskResult);
         assertEquals(r.getValue(), 3);
     }
