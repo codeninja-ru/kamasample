@@ -1,0 +1,9 @@
+frontend/db
+frontend/eclipse
+frontend/log
+frontend/logs
+frontend/precompiled
+frontend/tmp
+frontend/test-result
+frontend/eclipse
+frontend/server.pid
