@@ -1,22 +1,31 @@
 package controllers;
 
+import com.sun.jmx.snmp.tasks.TaskServer;
 import play.*;
 import play.mvc.*;
 
 import java.util.*;
 
+import javax.inject.Inject;
 import models.*;
+import org.eclipse.jdt.core.dom.ThisExpression;
+import services.TaskService;
 
 public class Application extends Controller {
+    
+    @Inject
+    protected static TaskService taskService;
 
     /**
      * show task list
      */
     public static void index() {
-        render();
+        
+        List<Task> tasks = taskService.getTasks();
+        render(tasks);
     }
     
-    public static void addTask(Integer val1, Integer val2) {
+    public static void add_task(int val1, int val2) {
         
     }
 

@@ -1,4 +1,12 @@
 #{extends 'main.html' /}
-#{set title:'Home' /}
+#{set title:'Task List' /}
 
-#{welcome /}
+#{if tasks}
+<ul>
+    #{list items:tasks, as:'task'}
+    <li>
+        ${task.val1} + ${task.val2} = #{if task.result} ${task.result.value} #{/if} #{else} ??? #{/else}
+    </li>    
+    #{/list}
+</ul>    
+#{/if}

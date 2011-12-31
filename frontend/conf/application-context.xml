@@ -3,5 +3,8 @@
 <beans>
     
     <bean id="taskList" class="models.TaskList" />
+    <bean id="taskService" class="services.TaskService">
+        <property name="taskList" ref="taskList" />
+    </bean>
     
 </beans>
