@@ -2,4 +2,5 @@
 
 require:
     - play
-    - spring
+    - play -> spring 1.0.2
+    - play -> rabbitmq 0.3

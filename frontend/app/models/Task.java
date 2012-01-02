@@ -1,5 +1,7 @@
 package models;
 
+import java.io.Serializable;
+
 /**
  * Класс сферической задачи в вакууме
  * 
@@ -8,7 +10,7 @@ package models;
  * 
  * @author vital
  */
-public class Task {
+public class Task implements Serializable {
     
     /**
      * первое число
