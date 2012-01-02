@@ -1,6 +1,26 @@
 #{extends 'main.html' /}
 #{set title:'Task List' /}
 
+<h1>Add Task</h1>
+#{form @Application.add_task()}
+
+    #{ifErrors}
+        <p class="error">
+            All fields are required!
+        </p>
+    #{/ifErrors}
+    
+    <label for="val1">Value #1: </label>
+    <input id="val1" name="val1" value="2"/>
+    
+    <label for="val2">Value #2: </label>
+    <input id="val2" name="val2" value="2" />
+    
+    <input type="submit" value="Run" />
+
+#{/form}
+
+<h1>${title}</h1>
 #{if tasks}
 <ul>
     #{list items:tasks, as:'task'}

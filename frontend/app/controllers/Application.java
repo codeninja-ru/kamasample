@@ -26,6 +26,19 @@ public class Application extends Controller {
     }
     
     public static void add_task(int val1, int val2) {
+        validation.required(val1);
+        validation.required(val2);
+        
+        if (validation.hasErrors()) {
+            render("Application/index.html");
+        } else {
+            
+            Task task = new Task(val1, val2);
+            taskService.runTask(task);
+            
+            index();
+        }
+        
         
     }
 
