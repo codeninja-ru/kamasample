@@ -10,7 +10,7 @@ import java.io.Serializable;
  * 
  * @author vital
  */
-public class Task implements Serializable {
+public class Task {
     
     /**
      * первое число
@@ -61,6 +61,9 @@ public class Task implements Serializable {
      */
     public boolean hasResult() {
         return this.getResult() != null;
-    }    
+    }
+
+  
+    
     
 }

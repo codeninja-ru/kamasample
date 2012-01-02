@@ -1,10 +1,12 @@
 package models;
 
+import java.io.Serializable;
+
 /**
  * Результат вычисления задачи
  * @author vital
  */
-public class TaskResult {
+public class TaskResult implements Serializable {
     
     /**
      * собственно результат

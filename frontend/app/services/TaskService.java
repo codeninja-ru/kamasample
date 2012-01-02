@@ -4,7 +4,10 @@ import java.util.List;
 import javax.inject.Inject;
 import models.Task;
 import models.TaskList;
+import models.TaskMessage;
 import models.TaskResult;
+import play.modules.rabbitmq.producer.RabbitMQFirehose;
+import play.modules.rabbitmq.producer.RabbitMQPublisher;
 
 /**
  * работа с задачами
@@ -19,8 +22,8 @@ public class TaskService {
      * @param task 
      */
     public void runTask(Task task) {
-        this.taskList.addTask(task);
-        
+        int taskId = this.taskList.addTask(task);
+        RabbitMQPublisher.publish("kama_task_list", new TaskMessage(task, taskId));
     }
     
     /**
@@ -75,7 +78,7 @@ public class TaskService {
     public void setTaskList(TaskList taskList) {
         this.taskList = taskList;
     }
-    
+ 
     
     
     
