@@ -1,12 +1,9 @@
 package services;
 
 import java.util.List;
-import javax.inject.Inject;
 import models.Task;
 import models.TaskList;
-import models.TaskMessage;
 import models.TaskResult;
-import play.modules.rabbitmq.producer.RabbitMQFirehose;
 import play.modules.rabbitmq.producer.RabbitMQPublisher;
 
 /**
@@ -23,7 +20,8 @@ public class TaskService {
      */
     public void runTask(Task task) {
         int taskId = this.taskList.addTask(task);
-        RabbitMQPublisher.publish("kama_task_list", new TaskMessage(task, taskId));
+        task.setTaskId(taskId);
+        RabbitMQPublisher.publish("kama_task_list", task);
     }
     
     /**

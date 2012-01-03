@@ -13,6 +13,8 @@ public class TaskResult implements Serializable {
      */
     protected int value;
 
+    protected int taskId;
+
     public TaskResult(int value) {
         this.value = value;
     }
@@ -24,5 +26,15 @@ public class TaskResult implements Serializable {
     public void setValue(int value) {
         this.value = value;
     }
+
+    public int getTaskId() {
+        return taskId;
+    }
+
+    public void setTaskId(int taskId) {
+        this.taskId = taskId;
+    }
+    
+    
     
 }

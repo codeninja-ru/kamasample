@@ -12,6 +12,8 @@ import java.io.Serializable;
  */
 public class Task {
     
+    protected int taskId;
+    
     /**
      * первое число
      */
@@ -61,6 +63,14 @@ public class Task {
      */
     public boolean hasResult() {
         return this.getResult() != null;
+    }
+
+    public int getTaskId() {
+        return taskId;
+    }
+
+    public void setTaskId(int taskId) {
+        this.taskId = taskId;
     }
 
   
